@@ -14499,3 +14499,8 @@ input.main-search-input::placeholder {
   width: 200px;
   height: auto;
 }/*# sourceMappingURL=main.css.map */
+
+
+.pricing-card.style3 .checklist li {
+  font-size: 13px;
+}
