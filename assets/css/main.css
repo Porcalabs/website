@@ -6812,6 +6812,7 @@ h6 {
   position: relative;
 }
 .header-3::before {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -6822,6 +6823,7 @@ h6 {
   content: "";
   background-color: var(--theme);
   left: 75.5%;
+  
 }
 @media (max-width: 1600px) {
   .header-3::before {
@@ -6872,6 +6874,7 @@ h6 {
   position: relative;
 }
 .header-3 .header-main .header-right .header-button::before {
+  display: none;
   width: 0px;
   height: 0px;
   border-top: 65px solid var(--theme);
@@ -7085,6 +7088,7 @@ h6 {
   display: none !important;
 }
 .sticky.header-3 .header-main .header-right .header-button .theme-btn {
+  
   background-color: var(--theme) !important;
   color: var(--white);
 }
