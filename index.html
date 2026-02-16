@@ -131,7 +131,7 @@
                         </div>
                         <div class="offcanvas__contact-text">
                            <a href="mailto:admin@porcalabs.com"><span
-                                 class="mailto:admin@porcalabs.com">admin</span></a>
+                                 class="mailto:admin@porcalabs.com">admin@porcalabs.com</span></a>
                         </div>
                      </li>
                      <li class="d-flex align-items-center">
@@ -2045,7 +2045,7 @@
                      <div class="widget footer-widget wow fadeInUp" data-wow-delay=".6s">
                         <div class="gt-widget-about">
                            <div class="about-logo">
-                              <a href="index.html"><img src="assets/img/logoporcalabs/Text Horizontal White.webp"
+                              <a href="index.html"><img src="assets/img/logoporcalabs/Logo n Text Horizontal White.webp"
                                     alt="porcalabs"></a>
                            </div>
                            <p class="about-text"> Porcalabs adalah partner digital yang membantu bisnis dan institusi
@@ -2066,24 +2066,33 @@
                         <h3 class="widget_title">Quick Links</h3>
                         <div class="menu-all-pages-container">
                            <ul class="menu">
-                              <li><a href="about.html"><i class="fa-solid fa-chevrons-right"></i>Tentang Porcalabs</a>
+                              <li><a href="tentang/index.html"><i class="fa-solid fa-chevrons-right"></i>Tentang Porcalabs</a>
                               </li>
-                              <li><a href="service.html"><i class="fa-solid fa-chevrons-right"></i>Layanan Kami</a>
+                              <li><a href="layanan/index.html"><i class="fa-solid fa-chevrons-right"></i>Layanan Kami</a>
                               </li>
-                              <li><a href="news.html"><i class="fa-solid fa-chevrons-right"></i>blogs Kami</a>
+                              <li><a href="blogs/index.html"><i class="fa-solid fa-chevrons-right"></i>Blogs Kami</a>
                               </li>
-                              <li><a href="faq.html"><i class="fa-solid fa-chevrons-right"></i>FAQ</a></li>
-                              <li><a href="contact.html"><i class="fa-solid fa-chevrons-right"></i>Kontak Kami</a>
+                              <li><a href="portofolio/index.html"><i class="fa-solid fa-chevrons-right"></i>Portfolio</a></li>
+                              <li><a href="kontak/index.html"><i class="fa-solid fa-chevrons-right"></i>Kontak Kami</a>
                               </li>
                            </ul>
                         </div>
                      </div>
                   </div>
                   <div class="col-xl-4 col-md-6 col-12">
-                     <div class="widget footer-widget wow fadeInUp" data-wow-delay="1.3s">
-                        <h3 class="widget_title">Recent Posts</h3>
-                        <div class="recent-post-wrap" id="wpRecentPosts">
-                           <!-- Recent posts dari WordPress akan dimuat di sini -->
+                     <div class="widget widget_nav_menu footer-widget wow fadeInUp" data-wow-delay="1.3s">
+                        <h3 class="widget_title">Layanan</h3>
+                        <div class="menu-all-pages-container">
+                           <ul class="menu">
+                              <li><a href="layanan/pembuatan_website.html"><i class="fa-solid fa-chevrons-right"></i>Pembuatan Website</a>
+                              </li>
+                              <li><a href="layanan/pembuatan_aplikasi.html"><i class="fa-solid fa-chevrons-right"></i>Pembuatan Aplikasi</a>
+                              </li>
+                              <li><a href="layanan/pembuatan_desain_media_sosial.html"><i class="fa-solid fa-chevrons-right"></i>Branding Media Sosial</a>
+                              </li>
+                              <li><a href="layanan/presensi_digital.html"><i class="fa-solid fa-chevrons-right"></i>Absensi Digital Sekolah</a></li>
+                              </li>
+                           </ul>
                         </div>
                      </div>
                   </div>
@@ -2287,70 +2296,6 @@
    <!--<< Main.js >>-->
    <script src="assets/js/main.js"></script>
 
-
-   <script>
-      (function () {
-         const API_URL = "https://www.porcalabs.com/blog/wp-json/wp/v2/posts?per_page=2&_embed";
-         const container = document.getElementById("wpRecentPosts");
-
-         if (!container) return;
-
-         const formatDate = (dateStr) => {
-            const d = new Date(dateStr);
-            return d.toLocaleDateString("id-ID", {
-               day: "2-digit",
-               month: "long",
-               year: "numeric"
-            });
-         };
-
-         const stripHtml = (html) => (html || "").replace(/<[^>]*>/g, "");
-
-         const getFeaturedImage = (post) => {
-            const media = post?._embedded?.["wp:featuredmedia"]?.[0];
-            return media?.source_url || "assets/img/footer/footerThumb1_1.png";
-         };
-
-         const buildPost = (post) => `
-    <div class="recent-post">
-      <div class="media-img">
-        <a href="${post.link}" target="_blank" rel="noopener">
-          <img src="${getFeaturedImage(post)}" alt="${stripHtml(post.title.rendered)}">
-        </a>
-      </div>
-      <div class="media-body">
-        <div class="recent-post-meta">
-          <a href="${post.link}" target="_blank" rel="noopener">
-            <img src="assets/img/icon/calendarIcon.svg" alt="icon">
-            ${formatDate(post.date)}
-          </a>
-        </div>
-        <h4 class="post-title">
-          <a class="text-inherit" href="${post.link}" target="_blank" rel="noopener">
-            ${stripHtml(post.title.rendered)}
-          </a>
-        </h4>
-      </div>
-    </div>
-  `;
-
-         container.innerHTML = `<p style="opacity:.6">Memuat artikel...</p>`;
-
-         fetch(API_URL)
-            .then(res => res.json())
-            .then(posts => {
-               if (!posts || posts.length === 0) {
-                  container.innerHTML = `<p style="opacity:.6">Belum ada artikel.</p>`;
-                  return;
-               }
-               container.innerHTML = posts.map(buildPost).join("");
-            })
-            .catch(err => {
-               console.error(err);
-               container.innerHTML = `<p style="opacity:.6">Gagal memuat artikel.</p>`;
-            });
-      })();
-   </script>
 
 </body>
 

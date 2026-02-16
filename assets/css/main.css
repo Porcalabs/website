@@ -14509,3 +14509,19 @@ input.main-search-input::placeholder {
   font-size: 13px;
 }
 
+/* FIX: Hamburger bisa diklik di mobile */
+.pl-header { position: sticky; top: 0; z-index: 9999; }
+
+.pl-burger{
+  position: relative;
+  z-index: 10001;
+  pointer-events: auto !important;
+}
+
+/* Pastikan overlay tidak “nahan klik” saat menu belum dibuka */
+.pl-overlay { pointer-events: none; }
+body.pl-menu-open .pl-overlay { pointer-events: auto; }
+
+/* Drawer & overlay layering */
+.pl-overlay{ z-index: 9998; }
+.pl-drawer{ z-index: 9999; }
