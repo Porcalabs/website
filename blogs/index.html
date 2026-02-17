@@ -505,111 +505,118 @@
 
 
     <script>
-  const WP_API = "https://www.porcalabs.com/blog/index.php/wp-json/wp/v2";
-  const PER_PAGE = 21;
+        const WP_API = "https://www.porcalabs.com/blog/index.php/wp-json/wp/v2";
+        const PER_PAGE = 21;
 
-  function getPage() {
-    const p = parseInt(new URLSearchParams(location.search).get("page") || "1", 10);
-    return Number.isFinite(p) && p > 0 ? p : 1;
-  }
+        function getPage() {
+            const p = parseInt(new URLSearchParams(location.search).get("page") || "1", 10);
+            return Number.isFinite(p) && p > 0 ? p : 1;
+        }
 
-  function setPage(page) {
-    const url = new URL(location.href);
-    url.searchParams.set("page", page);
-    history.pushState({}, "", url); // biar URL ikut berubah tapi tidak reload full
-  }
+        function setPage(page) {
+            const url = new URL(location.href);
+            url.searchParams.set("page", page);
+            history.pushState({}, "", url); // biar URL ikut berubah tapi tidak reload full
+        }
 
-  function renderPagination(current, total) {
-    const ul = document.getElementById("pagination");
-    if (!ul) return;
+        function getSearchQuery() {
+            return (new URLSearchParams(location.search).get("s") || "").trim();
+        }
 
-    ul.innerHTML = "";
-    if (total <= 1) return;
+        function renderPagination(current, total) {
+            const ul = document.getElementById("pagination");
+            if (!ul) return;
 
-    const addItem = (label, page, disabled = false, active = false, isIcon = false) => {
-      const li = document.createElement("li");
-      const a = document.createElement("a");
-      a.href = "#";
-      a.className = "page-numbers";
-      if (active) a.classList.add("current");
-      if (disabled) a.classList.add("disabled");
+            ul.innerHTML = "";
+            if (total <= 1) return;
 
-      a.innerHTML = isIcon ? label : String(label);
+            const addItem = (label, page, disabled = false, active = false, isIcon = false) => {
+                const li = document.createElement("li");
+                const a = document.createElement("a");
+                a.href = "#";
+                a.className = "page-numbers";
+                if (active) a.classList.add("current");
+                if (disabled) a.classList.add("disabled");
 
-      a.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (disabled || active) return;
-        setPage(page);
-        loadPosts(page);
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
+                a.innerHTML = isIcon ? label : String(label);
 
-      li.appendChild(a);
-      ul.appendChild(li);
-    };
+                a.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    if (disabled || active) return;
+                    setPage(page);
+                    loadPosts(page);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
 
-    // Prev
-    addItem('<i class="fa-solid fa-arrow-left-long"></i>', current - 1, current === 1, false, true);
+                li.appendChild(a);
+                ul.appendChild(li);
+            };
 
-    // window page numbers (biar gak kepanjangan)
-    const windowSize = 5;
-    let start = Math.max(1, current - Math.floor(windowSize / 2));
-    let end = Math.min(total, start + windowSize - 1);
-    start = Math.max(1, end - windowSize + 1);
+            // Prev
+            addItem('<i class="fa-solid fa-arrow-left-long"></i>', current - 1, current === 1, false, true);
 
-    if (start > 1) addItem("1", 1);
-    if (start > 2) {
-      const li = document.createElement("li");
-      li.innerHTML = `<span class="page-numbers">...</span>`;
-      ul.appendChild(li);
-    }
+            // window page numbers (biar gak kepanjangan)
+            const windowSize = 5;
+            let start = Math.max(1, current - Math.floor(windowSize / 2));
+            let end = Math.min(total, start + windowSize - 1);
+            start = Math.max(1, end - windowSize + 1);
 
-    for (let p = start; p <= end; p++) {
-      addItem(p, p, false, p === current);
-    }
+            if (start > 1) addItem("1", 1);
+            if (start > 2) {
+                const li = document.createElement("li");
+                li.innerHTML = `<span class="page-numbers">...</span>`;
+                ul.appendChild(li);
+            }
 
-    if (end < total - 1) {
-      const li = document.createElement("li");
-      li.innerHTML = `<span class="page-numbers">...</span>`;
-      ul.appendChild(li);
-    }
-    if (end < total) addItem(total, total);
+            for (let p = start; p <= end; p++) {
+                addItem(p, p, false, p === current);
+            }
 
-    // Next
-    addItem('<i class="fa-solid fa-arrow-right-long"></i>', current + 1, current === total, false, true);
-  }
+            if (end < total - 1) {
+                const li = document.createElement("li");
+                li.innerHTML = `<span class="page-numbers">...</span>`;
+                ul.appendChild(li);
+            }
+            if (end < total) addItem(total, total);
 
-  async function loadPosts(page = 1) {
-    const grid = document.getElementById("blogGrid");
-    grid.innerHTML = "<p>Loading posts...</p>";
+            // Next
+            addItem('<i class="fa-solid fa-arrow-right-long"></i>', current + 1, current === total, false, true);
+        }
 
-    try {
-      const url = `${WP_API}/posts?per_page=${PER_PAGE}&page=${page}&_embed=1`;
-      const res = await fetch(url);
+        async function loadPosts(page = 1) {
+            const grid = document.getElementById("blogGrid");
+            grid.innerHTML = "<p>Loading posts...</p>";
 
-      // kalau page kebesaran, WP biasanya balas 400
-      if (!res.ok) throw new Error("Gagal fetch posts: " + res.status);
+            try {
+                const q = getSearchQuery();
+                const searchParam = q ? `&search=${encodeURIComponent(q)}` : "";
+                const url = `${WP_API}/posts?per_page=${PER_PAGE}&page=${page}&_embed=1${searchParam}`;
 
-      const totalPages = parseInt(res.headers.get("X-WP-TotalPages") || "1", 10);
+                const res = await fetch(url);
 
-      const posts = await res.json();
-      grid.innerHTML = "";
+                // kalau page kebesaran, WP biasanya balas 400
+                if (!res.ok) throw new Error("Gagal fetch posts: " + res.status);
 
-      posts.forEach(post => {
-        const title = post.title?.rendered ?? "Untitled";
-        const linkToDetail = `blogs/detail_blog.html?id=${post.id}`;
+                const totalPages = parseInt(res.headers.get("X-WP-TotalPages") || "1", 10);
 
-        const featured =
-          post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ??
-          "assets/img/news/04.jpg";
+                const posts = await res.json();
+                grid.innerHTML = "";
 
-        const dateObj = new Date(post.date);
-        const category =
-          (post._embedded?.["wp:term"]?.[0] ?? []).map(t => t.name).filter(Boolean).join(", ") || "Artikel";
+                posts.forEach(post => {
+                    const title = post.title?.rendered ?? "Untitled";
+                    const linkToDetail = `blogs/detail_blog.html?id=${post.id}`;
 
-        const col = document.createElement("div");
-        col.className = "col-xl-4 col-lg-6 col-md-6";
-        col.innerHTML = `
+                    const featured =
+                        post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ??
+                        "assets/img/news/04.jpg";
+
+                    const dateObj = new Date(post.date);
+                    const category =
+                        (post._embedded?.["wp:term"]?.[0] ?? []).map(t => t.name).filter(Boolean).join(", ") || "Artikel";
+
+                    const col = document.createElement("div");
+                    col.className = "col-xl-4 col-lg-6 col-md-6";
+                    col.innerHTML = `
           <div class="news-card-items style-2 mt-0 pb-0">
             <div class="news-image">
               <img src="${featured}" alt="${title}">
@@ -631,26 +638,26 @@
             </div>
           </div>
         `;
-        grid.appendChild(col);
-      });
+                    grid.appendChild(col);
+                });
 
-      renderPagination(page, totalPages);
+                renderPagination(page, totalPages);
 
-    } catch (err) {
-      grid.innerHTML = `<p style="color:red;">${err.message}</p>`;
-      console.error(err);
-      // kalau error, kosongkan pagination biar gak misleading
-      const ul = document.getElementById("pagination");
-      if (ul) ul.innerHTML = "";
-    }
-  }
+            } catch (err) {
+                grid.innerHTML = `<p style="color:red;">${err.message}</p>`;
+                console.error(err);
+                // kalau error, kosongkan pagination biar gak misleading
+                const ul = document.getElementById("pagination");
+                if (ul) ul.innerHTML = "";
+            }
+        }
 
-  // init
-  loadPosts(getPage());
+        // init
+        loadPosts(getPage());
 
-  // back/forward browser support
-  window.addEventListener("popstate", () => loadPosts(getPage()));
-</script>
+        // back/forward browser support
+        window.addEventListener("popstate", () => loadPosts(getPage()));
+    </script>
 
 
 </body>
