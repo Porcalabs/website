@@ -11273,7 +11273,7 @@ input.main-search-input::placeholder {
 
 .project-items .project-image {
   position: relative;
-  height: 457px;
+  height: 320px;
 }
 .project-items .project-image img {
   width: 100%;
@@ -14436,6 +14436,7 @@ input.main-search-input::placeholder {
   margin-right: auto;
   margin-top: -100px;
   padding-bottom: 40px;
+  padding-right: 40px;
   border-bottom: 1px solid var(--border-color);
 }
 @media (max-width: 1899px) {
