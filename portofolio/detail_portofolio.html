@@ -252,7 +252,8 @@
 
 
     <!--<< Breadcrumb Section Start >>-->
-    <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/hero/Main_Section.webp');">
+   
+   <!-- <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
         <div class="border-shape">
             <img src="assets/img/element.png" alt="shape-img">
         </div>
@@ -261,7 +262,7 @@
         </div>
         <div class="container">
             <div class="page-heading">
-                <h1 class="wow fadeInUp" data-wow-delay=".3s">Project</h1>
+                <h1 class="wow fadeInUp" data-wow-delay=".3s">Project Details</h1>
                 <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
                     <li>
                         <a href="index.html">
@@ -272,22 +273,147 @@
                         <i class="fas fa-chevron-right"></i>
                     </li>
                     <li>
-                        Project
+                        Project Details
                     </li>
                 </ul>
             </div>
         </div>
     </div>
+    -->
 
     <!-- Project Section Start -->
-    <section class="project-section section-padding fix">
-        <div class="container">
-            <div class="row g-4">
-                <div class="row g-4" id="projectGrid"></div>
+    <section class="Project-details-section fix section-padding">
+  <div class="container">
+    <div class="project-details-wrapper">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="project-details-items">
 
+            <!-- COVER / HERO IMAGE -->
+            <div class="details-image">
+              <img id="coverProyek" src="assets/img/project/details.jpg" alt="img">
             </div>
+
+            <div class="row g-4 justify-content-between">
+              <div class="col-lg-7">
+                <div class="details-content pt-5">
+                  <h3 id="judulProyek">IT Management</h3>
+                  <p id="deskripsiProyek">
+                    Data sedang dimuat... <!-- nanti diganti dengan deskripsi singkat spreadsheet. -->
+                </div>
+              </div>
+
+              <div class="col-lg-4">
+                <div class="project-catagory">
+                  <h3>Project Info: </h3>
+                  <ul>
+                    <li>
+                      Client:
+                      <span id="clientProyek">Data sedang dimuat...</span>
+                    </li>
+                    <li>
+                      Category:
+                      <span id="categoryProyek">Data sedang dimuat...</span>
+                    </li>
+                    <li>
+                      Location:
+                      <span id="locationProyek">Data sedang dimuat...</span>
+                    </li>
+
+                    <!-- OPTIONAL: link preview -->
+                    <li id="previewRow" style="display:none;">
+                      Preview:
+                      <span>
+                        <a id="linkPreview" href="#" target="_blank" rel="noopener">
+                          Lihat Preview <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                        </a>
+                      </span>
+                    </li>
+
+                    <!-- share tetap statis -->
+                    <li>
+                      Share:
+                      <span>
+                        <a href="#"> <i class="fa-brands fa-facebook-f me-3"></i> </a>
+                        <a href="#"> <i class="fa-brands fa-instagram me-3"></i> </a>
+                        <a href="#"> <i class="fa-brands fa-linkedin-in"></i> </a>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- CHALLENGE -->
+            <div class="details-content pt-3">
+              <h3>Our Challenge</h3>
+              <p id="deskTantangan">
+                Data sedang dimuat... <!-- nanti diganti dengan deskripsi spreadsheet. -->
+            </div>
+
+            <!-- TANTANGAN LIST (dinamis 1-6) -->
+            <div class="row g-4 pt-5">
+              <div class="col-lg-12">
+                <ul class="list" id="tantanganList">
+                  <li>
+                    <i class="fa-regular fa-circle-check"></i>
+                    Data sedang dimuat... <!-- nanti diganti dengan tantangan spreadsheet. -->
+                  </li>
+                  <li>
+                    <i class="fa-regular fa-circle-check"></i>
+                    Data sedang dimuat... <!-- nanti diganti dengan tantangan spesifik dari spreadsheet. -->
+                </ul>
+              </div>
+            </div>
+
+            <!-- RESULT -->
+            <div class="details-content pt-5">
+              <h3>The Result of Project</h3>
+              <p id="resultProyek">
+                Data sedang dimuat... <!-- nanti diganti dengan deskripsi hasil proyek dari spreadsheet. -->
+              </p>
+            </div>
+
+            <!-- IMAGE GALLERY -->
+            <div class="row g-4 pt-5">
+              <div class="col-lg-6 col-md-6">
+                <div class="thumb">
+                  <img id="img1" src="assets/img/project/details-2.jpg" alt="img">
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="thumb">
+                  <img id="img2" src="assets/img/project/details-3.jpg" alt="img">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- preview-area (opsional, kalau mau dipakai untuk "prev/next" nanti) -->
+          <div class="preview-area" style="display:none;">
+            <div class="preview-item">
+              <img src="assets/img/project/p-1.png" alt="img">
+              <div class="content">
+                <h3>Preview</h3>
+                <p>Analytic Solutions</p>
+              </div>
+            </div>
+            <div class="preview-item">
+              <div class="content text-right">
+                <h3>Next</h3>
+                <p>Software Development</p>
+              </div>
+              <img src="assets/img/project/p-2.png" alt="img">
+            </div>
+          </div>
+
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 
@@ -506,80 +632,71 @@
     <script src="assets/js/main.js"></script>
 
 
-    <!-- 
     <script>
-        const projects = [
-            { img: "assets/img/portfolio/wb (1).webp", cat: "Web Development", title: "SMK Karya Bhakti 2", link: "project-details.html" },
-            { img: "assets/img/portfolio/wb (2).webp", cat: "Web Development", title: "Villa Tiga Negeri", link: "project-details.html" },
-            { img: "assets/img/portfolio/wb (3).webp", cat: "Web Development", title: "SMP N 1 Kedungwaringin", link: "project-details.html" },
-            // ... tambah sampai 20+ item
-        ];
+  const API_URL = "https://script.google.com/macros/s/AKfycbwLxCm_yTXvL48IxjJJ9StN7_yhe3HX8P2OrpfwuzTQGxwMjCn06vA5lVb7rI4IwHmP/exec"; // .../exec
 
-        const grid = document.getElementById("projectGrid");
+  function getId() {
+    return new URLSearchParams(location.search).get("id");
+  }
 
-        grid.innerHTML = projects.map((p, i) => `
-    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="${0.3 + (i % 3) * 0.2}s">
-      <div class="project-items">
-        <div class="project-image">
-          <img src="${p.img}" alt="project-img">
-          <div class="project-content style2">
-            <p>${p.cat}</p>
-            <h4><a href="${p.link}">${p.title}</a></h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  `).join("");
-    </script>
-    -->
-    <script>
-  const API_URL = "https://script.google.com/macros/s/AKfycbwLxCm_yTXvL48IxjJJ9StN7_yhe3HX8P2OrpfwuzTQGxwMjCn06vA5lVb7rI4IwHmP/exec";
+  async function loadPortfolioDetail() {
+    const id = getId();
+    if (!id) {
+      document.getElementById("judulProyek").textContent = "Project not found";
+      return;
+    }
 
-  async function loadPortfolioGrid() {
-    const grid = document.getElementById("projectGrid");
-    grid.innerHTML = "<p>Loading...</p>";
+    const res = await fetch(`${API_URL}?action=portfolio_detail&id=${encodeURIComponent(id)}`);
+    const json = await res.json();
 
-    try {
-      const res = await fetch(`${API_URL}?action=portfolio_list`);
-      const json = await res.json();
+    if (!json.success) {
+      document.getElementById("judulProyek").textContent = "Project not found";
+      return;
+    }
 
-      if (!json.success) {
-        grid.innerHTML = "<p>Gagal mengambil data portfolio.</p>";
-        return;
-      }
+    const p = json.data;
 
-      const projects = json.data || [];
+    // basic text
+    document.getElementById("judulProyek").textContent = p.judul_proyek || "";
+    document.getElementById("deskripsiProyek").textContent = p.deskripsi_proyek || "";
+    document.getElementById("clientProyek").textContent = p.client || "";
+    document.getElementById("categoryProyek").textContent = p.category || "";
+    document.getElementById("locationProyek").textContent = p.location || "";
+    document.getElementById("deskTantangan").textContent = p.desk_tantangan || "";
+    document.getElementById("resultProyek").textContent = p.result || "";
 
-      grid.innerHTML = projects.map((p, i) => `
-        <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="${0.3 + (i % 3) * 0.2}s">
-          <div class="project-items">
-            <div class="project-image">
-              <img src="${p.cover_proyek || ""}" alt="project-img">
-              <div class="project-content style2">
-                <p>${p.category || ""}</p>
-                <h4>
-                  <a href="portofolio/detail_portofolio.html?id=${encodeURIComponent(p.id_proyek)}">
-                    ${escapeHtml(p.judul_proyek || "")}
-                  </a>
-                </h4>
-              </div>
-            </div>
-          </div>
-        </div>
+    // cover image
+    if (p.cover_proyek) document.getElementById("coverProyek").src = p.cover_proyek;
+
+    // images
+    if (p.image1) document.getElementById("img1").src = p.image1;
+    if (p.image2) document.getElementById("img2").src = p.image2;
+
+    // tantangan 1..6 -> list
+    const t = [p.tantangan1, p.tantangan2, p.tantangan3, p.tantangan4, p.tantangan5, p.tantangan6].filter(Boolean);
+    const listEl = document.getElementById("tantanganList");
+    if (t.length) {
+      listEl.innerHTML = t.map(x => `
+        <li><i class="fa-regular fa-circle-check"></i> ${escapeHtml(String(x))}</li>
       `).join("");
+    } else {
+      listEl.innerHTML = "";
+    }
 
-      if (typeof WOW === "function") {
-        new WOW().init();
-      }
-
-    } catch (err) {
-      grid.innerHTML = "<p>Error load portfolio.</p>";
-      console.error(err);
+    // link preview
+    const previewRow = document.getElementById("previewRow");
+    const linkPreview = document.getElementById("linkPreview");
+    if (p.link_preview) {
+      linkPreview.href = p.link_preview;
+      previewRow.style.display = "";
+    } else {
+      previewRow.style.display = "none";
     }
   }
 
+  // simple escape to prevent broken HTML
   function escapeHtml(str) {
-    return String(str)
+    return str
       .replaceAll("&", "&amp;")
       .replaceAll("<", "&lt;")
       .replaceAll(">", "&gt;")
@@ -587,9 +704,8 @@
       .replaceAll("'", "&#039;");
   }
 
-  loadPortfolioGrid();
+  loadPortfolioDetail();
 </script>
-
 
 
 
