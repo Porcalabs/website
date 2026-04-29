@@ -1,0 +1,590 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<!--<< Header Area >>-->
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Porcalabs">
+    <meta name="description" content="Source Code Website SMK siap pakai - template website sekolah menengah kejuruan lengkap dengan profil, jurusan, galeri, dan konten siap pakai.">
+    <!-- ======== Page title ============ -->
+    <title>Source Code Website SMK - IT Solution & Digitalization</title>
+    <base href="/">
+    <!--<< Favcion >>-->
+    <link rel="shortcut icon" href="assets/img/logoporcalabs/Logo Icon Transparant.webp">
+    <!--<< Bootstrap min.css >>-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!--<< All Min Css >>-->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!--<< Animate.css >>-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!--<< Magnific Popup.css >>-->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!--<< MeanMenu.css >>-->
+    <link rel="stylesheet" href="assets/css/meanmenu.css">
+    <!--<< Swiper Bundle.css >>-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!--<< Nice Select.css >>-->
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <!--<< Main.css >>-->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .product-hero {
+            padding: 60px 0 40px;
+        }
+        .product-hero-img {
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,.12);
+        }
+        .product-badge {
+            display: inline-block;
+            background: #3C72FC;
+            color: #fff;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .product-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        .price-block {
+            margin: 20px 0;
+        }
+        .price-original {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        .price-discount {
+            color: #e53e3e;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        .price-save {
+            display: inline-block;
+            background: #fff3cd;
+            color: #856404;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 18px 0;
+        }
+        .feature-list li {
+            padding: 8px 0;
+            font-size: 15px;
+            color: #555;
+            display: flex;
+            align-items: flex-start;
+        }
+        .feature-list li i {
+            color: #3C72FC;
+            margin-right: 10px;
+            margin-top: 3px;
+            font-size: 14px;
+        }
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all .3s;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-download-full {
+            background: #3C72FC;
+            color: #fff;
+            width: 100%;
+        }
+        .btn-download-full:hover {
+            background: #2a5ae0;
+            color: #fff;
+        }
+        .btn-download-free {
+            background: #fff;
+            color: #3C72FC;
+            border: 2px solid #3C72FC;
+            width: 100%;
+        }
+        .btn-download-free:hover {
+            background: #f0f4ff;
+            color: #2a5ae0;
+        }
+        .qris-popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,.6);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+        }
+        .qris-popup-overlay.active {
+            display: flex;
+        }
+        .qris-popup {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: popupIn .3s ease;
+        }
+        @keyframes popupIn {
+            from { transform: scale(.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .qris-popup-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            color: #999;
+            cursor: pointer;
+        }
+        .qris-popup-close:hover {
+            color: #333;
+        }
+        .qris-popup h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .qris-popup .popup-price-original {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 16px;
+        }
+        .qris-popup .popup-price-discount {
+            color: #e53e3e;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .qris-popup .popup-save-badge {
+            display: inline-block;
+            background: #fff3cd;
+            color: #856404;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+        .qris-popup img {
+            max-width: 260px;
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px auto;
+            display: block;
+        }
+        .qris-popup .popup-note {
+            font-size: 13px;
+            color: #888;
+            margin-top: 12px;
+        }
+        .countdown-bar {
+            background: linear-gradient(135deg, #e53e3e, #fc8181);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .countdown-bar span {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .product-slider .swiper-slide img {
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,.12);
+            width: 100%;
+        }
+        .product-slider .swiper-pagination-bullet-active {
+            background: #3C72FC;
+        }
+        .product-slider .swiper-button-next,
+        .product-slider .swiper-button-prev {
+            color: #3C72FC;
+            background: rgba(255,255,255,.8);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .product-slider .swiper-button-next::after,
+        .product-slider .swiper-button-prev::after {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Preloader Start -->
+    <div id="preloader" class="preloader">
+        <div class="animation-preloader">
+            <div class="spinner">
+            </div>
+            <div class="txt-loading">
+                <span data-text-preloader="P" class="letters-loading">P</span>
+                <span data-text-preloader="O" class="letters-loading">O</span>
+                <span data-text-preloader="R" class="letters-loading">R</span>
+                <span data-text-preloader="C" class="letters-loading">C</span>
+                <span data-text-preloader="A" class="letters-loading">A</span>
+                <span data-text-preloader="L" class="letters-loading">L</span>
+                <span data-text-preloader="A" class="letters-loading">A</span>
+                <span data-text-preloader="B" class="letters-loading">B</span>
+                <span data-text-preloader="S" class="letters-loading">S</span>
+            </div>
+            <p class="text-center">Loading</p>
+        </div>
+        <div class="loader">
+            <div class="row">
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--<< Mouse Cursor Start >>-->
+    <div class="mouse-cursor cursor-outer"></div>
+    <div class="mouse-cursor cursor-inner"></div>
+
+    <!-- Offcanvas Area Start -->
+    <div class="fix-area">
+        <div class="offcanvas__info">
+            <div class="offcanvas__wrapper">
+                <div class="offcanvas__content">
+                    <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
+                        <div class="offcanvas__logo">
+                            <a href="index.html"><img src="assets/img/logoporcalabs/Logo n Text Horizontal White.webp" alt="logo-img"></a>
+                        </div>
+                        <div class="offcanvas__close">
+                            <button><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <p class="text d-none d-lg-block">
+                        Porcalabs adalah partner digital yang membantu bisnis dan institusi bertransformasi melalui
+                        website, aplikasi, dan solusi teknologi yang disesuaikan dengan kebutuhan.
+                    </p>
+                    <div class="mobile-menu fix mb-3"></div>
+                    <div class="offcanvas__contact">
+                        <h4>Contact Info</h4>
+                        <ul>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon"><i class="fal fa-map-marker-alt"></i></div>
+                                <div class="offcanvas__contact-text">
+                                    <a rel="noopener noreferrer" target="_blank" href="https://maps.app.goo.gl/CHc1uaaf8AGXtyFo7">Waringin Jaya, Bekasi, Jawa Barat</a>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon mr-15"><i class="fal fa-envelope"></i></div>
+                                <div class="offcanvas__contact-text">
+                                    <a href="mailto:admin@porcalabs.com"><span class="mailto:admin@porcalabs.com">admin@porcalabs.com</span></a>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon mr-15"><i class="fal fa-clock"></i></div>
+                                <div class="offcanvas__contact-text"><a href="kontak/index.html">Senin-Jumat, 09.00 -05.00</a></div>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <div class="offcanvas__contact-icon mr-15"><i class="far fa-phone"></i></div>
+                                <div class="offcanvas__contact-text"><a href="https://wa.me/6285156110395">+62 851 5611 0395</a></div>
+                            </li>
+                        </ul>
+                        <div class="header-button mt-4">
+                            <a href="kontak/index.html" class="theme-btn text-center"><span>Hubungi Kami<i class="fa-solid fa-arrow-right-long"></i></span></a>
+                        </div>
+                        <div class="social-icon d-flex align-items-center">
+                            <a href="https://www.facebook.com/porcalabs/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/porcalabs/"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/company/porcalabs/"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas__overlay"></div>
+
+    <!-- Header Section Start -->
+    <header data-header="inner"></header>
+
+
+
+
+    <!-- Product Landing Section -->
+    <section class="product-hero section-padding">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-xl-6 col-lg-6 wow fadeInLeft" data-wow-delay=".3s">
+                    <div class="product-slider swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="assets/img/product/Source_Code_Website_SMK_1.png" alt="Preview 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/img/product/Source_Code_Website_SMK_2.png" alt="Preview 2">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 wow fadeInRight" data-wow-delay=".3s">
+                    <span class="product-badge">Source Code</span>
+                    <h2 class="product-title">Source Code Website SMK</h2>
+                    <p class="text mb-0">Template website sekolah menengah kejuruan (SMK) yang siap pakai, lengkap dengan profil sekolah, jurusan, galeri kegiatan, dan konten informatif lainnya.</p>
+
+                    <div class="price-block">
+                        <span class="price-original">Rp199.000</span>
+                        <span class="price-discount">Rp29.000</span>
+                        <span class="price-save">HEMAT 85%</span>
+                    </div>
+
+                    <div class="countdown-bar" id="countdownBar">
+                        <i class="fas fa-fire"></i> Harga diskon berakhir dalam <span id="countdownTimer">00:00:00</span>
+                    </div>
+
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Desain modern & responsif (mobile friendly)</li>
+                        <li><i class="fas fa-check-circle"></i> Halaman lengkap: Profil, Jurusan, Galeri, Kontak</li>
+                        <li><i class="fas fa-check-circle"></i> Source code lengkap & mudah dikustomisasi</li>
+                        <li><i class="fas fa-check-circle"></i> Teknologi HTML, CSS, JavaScript</li>
+                        <li><i class="fas fa-check-circle"></i> Dokumentasi panduan penggunaan</li>
+                        <li><i class="fas fa-check-circle"></i> Support via WhatsApp</li>
+                    </ul>
+
+                    <div class="alert alert-warning mt-2 mb-2" style="border-radius:8px; font-size:14px;">
+                        <i class="fas fa-lock me-1"></i> <a href="https://wa.me/6285156110395?text=Halo%2C%20saya%20ingin%20mendapatkan%20password%20ZIP%20untuk%20Source%20Code%20Website%20SMK%20(Free%20Version)." target="_blank" style="font-weight:600; text-decoration:underline;">Hubungi whatsapp untuk password zip</a>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <a href="https://drive.google.com/drive/folders/1RAs2cnkYFlR285ZfSAVF_Jzip0aj3Gxy?usp=sharing" target="_blank" class="btn-download btn-download-free">
+                                <i class="fas fa-download me-2"></i> Download Free
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn-download btn-download-full" onclick="openQrisPopup('full')">
+                                <i class="fas fa-code me-2"></i> Download Full Source Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Features Section -->
+    <section class="service-section section-padding fix" style="background: #f8f9ff;">
+        <div class="container">
+            <div class="section-title title-area mx-auto mb-50">
+                <div class="subtitle d-flex justify-content-center"><img src="assets/img/icon/arrowLeft.svg" alt="icon">
+                   <span> Fitur Produk </span><img src="assets/img/icon/arrowRight.svg" alt="icon">
+                </div>
+                <h2 class="title text-center">Apa yang Anda Dapatkan?</h2>
+            </div>
+            <div class="row gy-4">
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="service-box-items box-shadow text-center" style="padding:30px;">
+                        <div style="font-size:40px; color:#3C72FC; margin-bottom:16px;"><i class="fas fa-palette"></i></div>
+                        <h4>Desain Modern</h4>
+                        <p>Tampilan profesional dan responsif yang tampil sempurna di semua perangkat.</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                    <div class="service-box-items box-shadow text-center" style="padding:30px;">
+                        <div style="font-size:40px; color:#3C72FC; margin-bottom:16px;"><i class="fas fa-code"></i></div>
+                        <h4>Source Code Lengkap</h4>
+                        <p>Dapatkan seluruh source code yang mudah dipahami dan dikustomisasi sesuai kebutuhan.</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                    <div class="service-box-items box-shadow text-center" style="padding:30px;">
+                        <div style="font-size:40px; color:#3C72FC; margin-bottom:16px;"><i class="fas fa-headset"></i></div>
+                        <h4>Support Premium</h4>
+                        <p>Bantuan via WhatsApp jika ada kendala dalam penggunaan atau kustomisasi.</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="service-box-items box-shadow text-center" style="padding:30px;">
+                        <div style="font-size:40px; color:#3C72FC; margin-bottom:16px;"><i class="fas fa-file-alt"></i></div>
+                        <h4>Halaman Lengkap</h4>
+                        <p>Profil sekolah, daftar jurusan, galeri kegiatan, sambutan kepala sekolah, dan kontak.</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                    <div class="service-box-items box-shadow text-center" style="padding:30px;">
+                        <div style="font-size:40px; color:#3C72FC; margin-bottom:16px;"><i class="fas fa-book-open"></i></div>
+                        <h4>Dokumentasi</h4>
+                        <p>Panduan lengkap cara instalasi, konfigurasi, dan kustomisasi website.</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                    <div class="service-box-items box-shadow text-center" style="padding:30px;">
+                        <div style="font-size:40px; color:#3C72FC; margin-bottom:16px;"><i class="fas fa-rocket"></i></div>
+                        <h4>Siap Pakai</h4>
+                        <p>Tinggal upload ke hosting, ganti konten, dan website sekolah Anda langsung online.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding" style="background: linear-gradient(135deg, #3C72FC, #1a4fd0);">
+        <div class="container text-center text-white">
+            <h2 class="mb-3 wow fadeInUp" data-wow-delay=".3s" style="font-size:32px; font-weight:700;">Siap Memiliki Website SMK Profesional?</h2>
+            <p class="mb-4 wow fadeInUp" data-wow-delay=".5s" style="font-size:18px; opacity:.9;">Dapatkan source code lengkap hanya Rp29.000 (diskon 85% dari harga normal Rp199.000)</p>
+            <button class="btn-download btn-download-full wow fadeInUp" data-wow-delay=".7s" onclick="openQrisPopup('full')" style="background:#fff; color:#3C72FC; max-width:360px;">
+                <i class="fas fa-shopping-cart me-2"></i> Dapatkan Sekarang
+            </button>
+        </div>
+    </section>
+
+
+    <!--<< Footer Section Start >>-->
+    <footer></footer>
+
+    <!-- QRIS Popup -->
+    <div class="qris-popup-overlay" id="qrisPopupOverlay">
+        <div class="qris-popup">
+            <button class="qris-popup-close" onclick="closeQrisPopup()"><i class="fas fa-times"></i></button>
+            <h3 id="popupTitle">Pembayaran</h3>
+            <div style="margin:8px 0;">
+                <span class="popup-price-original">Rp199.000</span>
+                <span class="popup-price-discount">Rp29.000</span>
+                <span class="popup-save-badge">HEMAT 85%</span>
+            </div>
+            <img src="assets/img/qris.jpg" alt="QRIS Pembayaran">
+            <p style="font-size:14px; font-weight:600; color:#333;">Scan QRIS di atas untuk pembayaran</p>
+            <p class="popup-note">Setelah pembayaran, kirim bukti transfer ke WhatsApp kami untuk mendapatkan link download.</p>
+            <a href="https://wa.me/6285156110395?text=Halo%2C%20saya%20sudah%20melakukan%20pembayaran%20Source%20Code%20Website%20SMK.%20Berikut%20bukti%20transfer%20saya." class="btn-download btn-download-full mt-3" target="_blank">
+                <i class="fab fa-whatsapp me-2"></i> Kirim Bukti ke WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!--<< All JS Plugins >>-->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!--<< Viewport Js >>-->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!--<< Bootstrap Js >>-->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!--<< Nice Select Js >>-->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!--<< Waypoints Js >>-->
+    <script src="assets/js/jquery.waypoints.js"></script>
+    <!--<< Counterup Js >>-->
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <!--<< Swiper Slider Js >>-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!--<< MeanMenu Js >>-->
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <!--<< Magnific Popup Js >>-->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!--<< Wow Animation Js >>-->
+    <script src="assets/js/wow.min.js"></script>
+    <!--<< Ajax Mail Js >>-->
+    <script src="assets/js/ajax-mail.js"></script>
+    <script src="assets/js/include.js"></script>
+    <!--<< Main.js >>-->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        function openQrisPopup(type) {
+            var popup = document.getElementById('qrisPopupOverlay');
+            var title = document.getElementById('popupTitle');
+            if (type === 'free') {
+                title.textContent = 'Download Free Version';
+            } else {
+                title.textContent = 'Download Full Source Code';
+            }
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeQrisPopup() {
+            var popup = document.getElementById('qrisPopupOverlay');
+            popup.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('qrisPopupOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closeQrisPopup();
+        });
+
+        // Init Swiper slider
+        (function() {
+            new Swiper('.product-slider', {
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                }
+            });
+        })();
+
+        // Countdown timer (set to midnight today + 1 day for urgency)
+        (function() {
+            var end = new Date();
+            end.setHours(23, 59, 59, 999);
+            function update() {
+                var now = new Date();
+                var diff = end - now;
+                if (diff <= 0) {
+                    end.setDate(end.getDate() + 1);
+                    diff = end - now;
+                }
+                var h = Math.floor(diff / 3600000);
+                var m = Math.floor((diff % 3600000) / 60000);
+                var s = Math.floor((diff % 60000) / 1000);
+                document.getElementById('countdownTimer').textContent =
+                    String(h).padStart(2, '0') + ':' +
+                    String(m).padStart(2, '0') + ':' +
+                    String(s).padStart(2, '0');
+            }
+            update();
+            setInterval(update, 1000);
+        })();
+    </script>
+
+</body>
+
+</html>

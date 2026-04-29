@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
+    <url>
+        <loc>https://porcalabs.com/</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Tentang Kami -->
+    <url>
+        <loc>https://porcalabs.com/tentang/index.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Cara Kerja -->
+    <url>
+        <loc>https://porcalabs.com/tentang/cara_kerja.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Layanan -->
+    <url>
+        <loc>https://porcalabs.com/layanan/index.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Pembuatan Website -->
+    <url>
+        <loc>https://porcalabs.com/layanan/pembuatan_website.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Pembuatan Aplikasi -->
+    <url>
+        <loc>https://porcalabs.com/layanan/pembuatan_aplikasi.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Pembuatan Desain Media Sosial -->
+    <url>
+        <loc>https://porcalabs.com/layanan/pembuatan_desain_media_sosial.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Pembuatan E-commerce -->
+    <url>
+        <loc>https://porcalabs.com/layanan/pembuatan_e-commerce.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Pembuatan Kartu Pelajar RFID -->
+    <url>
+        <loc>https://porcalabs.com/layanan/pembuatan_kartu_pelajar_rfid.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Maintenance -->
+    <url>
+        <loc>https://porcalabs.com/layanan/maintenance.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Portofolio -->
+    <url>
+        <loc>https://porcalabs.com/portofolio/index.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Blog -->
+    <url>
+        <loc>https://porcalabs.com/blogs/index.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Kontak Kami -->
+    <url>
+        <loc>https://porcalabs.com/kontak/index.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Produk Digital -->
+    <url>
+        <loc>https://porcalabs.com/produk/index.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Source Code Website SMK -->
+    <url>
+        <loc>https://porcalabs.com/produk/source-code-website-smk.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+</urlset>
